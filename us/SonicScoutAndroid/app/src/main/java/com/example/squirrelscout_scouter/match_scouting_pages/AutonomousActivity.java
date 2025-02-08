@@ -157,9 +157,20 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
 
         // 2025 new fields
         autoPreplacedCoral = (CheckBox) findViewById(R.id.checkBox);;
-        autoCoralL4Score = autoCoralL4Miss = autoCoralL3Score = autoCoralL3Miss = (TextView) findViewById(R.id.SpeakerScoredCounter);
+        autoCoralL3Score = autoCoralL3Miss = (TextView) findViewById(R.id.SpeakerScoredCounter);
         autoCoralL2Score = autoCoralL2Miss = autoCoralL1Score = autoCoralL1Miss = (TextView) findViewById(R.id.SpeakerScoredCounter);
         autoProcessorScore = autoProcessorMiss = autoNetScore = autoNetMiss = (TextView) findViewById(R.id.SpeakerScoredCounter);
+
+        autoCoralL4Score = (TextView) findViewById(R.id.SpeakerScoredCounter);
+        autoCoralL4Miss = (TextView) findViewById(R.id.SpeakerMissedCounter);
+
+
+
+
+
+
+        //ampMiss = (TextView) findViewById(R.id.AmpMissedCounter);
+        //ampMiss.setOnClickListener(this);
 
         //start animation (Was not used in 2024 season but was used in 2023 off season)
         //animationStart();
