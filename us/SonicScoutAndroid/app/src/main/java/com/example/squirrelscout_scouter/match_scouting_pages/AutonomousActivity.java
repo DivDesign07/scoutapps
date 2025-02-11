@@ -29,6 +29,8 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
     
     Button autoCoralL4ScoreIncrement, autoCoralL4ScoreDecrement, ampMissInrecement, ampMissDecrement;
 
+    Button autoCoralL3ScoreIncrement;
+
     
 
     TextView speakerScore, speakerMiss, autoCoralL4Score, ampMiss;
@@ -83,8 +85,7 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
 
         //speaker & amp scoring, Initializing all the variables listed above by connecting them to an
         //an xml object in the relative xml file
-        speakerScoreIncrement = (Button) findViewById(R.id.Speaker_Scored_increment);
-        speakerScoreIncrement.setOnClickListener(this);
+
         speakerScoreDecrement = (Button) findViewById(R.id.Speaker_Scored_decrement);
         speakerScoreDecrement.setOnClickListener(this);
         speakerMissIncrement = (Button) findViewById(R.id.Speaker_Missed_Increment);
@@ -95,6 +96,8 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
         autoCoralL4ScoreIncrement.setOnClickListener(this);
         autoCoralL4ScoreDecrement = (Button) findViewById(R.id.autoCoralL4ScoreDecrement);
         autoCoralL4ScoreDecrement.setOnClickListener(this);
+        autoCoralL3ScoreIncrement = (Button) findViewById(R.id.autoCoralL3ScoreIncrement);
+        autoCoralL3ScoreIncrement.setOnClickListener(this);
         ampMissInrecement = (Button) findViewById(R.id.Amp_Missed_Increment);
         ampMissInrecement.setOnClickListener(this);
         ampMissDecrement = (Button) findViewById(R.id.Amp_Missed_Decrement);
@@ -103,8 +106,6 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
         speakerScore.setOnClickListener(this);
         speakerMiss = (TextView) findViewById(R.id.SpeakerMissedCounter);
         speakerMiss.setOnClickListener(this);
-        autoCoralL4Score = (TextView) findViewById(R.id.autoCoralL4Score);
-        autoCoralL4Score.setOnClickListener(this);
         ampMiss = (TextView) findViewById(R.id.AmpMissedCounter);
         ampMiss.setOnClickListener(this);
 
@@ -159,12 +160,16 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
 
         // 2025 new fields
         autoPreplacedCoral = (CheckBox) findViewById(R.id.checkBox);;
-        autoCoralL3Score = autoCoralL3Miss = (TextView) findViewById(R.id.SpeakerScoredCounter);
+        autoCoralL3Miss = (TextView) findViewById(R.id.SpeakerScoredCounter);
         autoCoralL2Score = autoCoralL2Miss = autoCoralL1Score = autoCoralL1Miss = (TextView) findViewById(R.id.SpeakerScoredCounter);
         autoProcessorScore = autoProcessorMiss = autoNetScore = autoNetMiss = (TextView) findViewById(R.id.SpeakerScoredCounter);
 
-        autoCoralL4Score = (TextView) findViewById(R.id.SpeakerScoredCounter);
+        autoCoralL4Score = (TextView) findViewById(R.id.autoCoralL4Score);
+        autoCoralL4Score.setOnClickListener(this);
         autoCoralL4Miss = (TextView) findViewById(R.id.SpeakerMissedCounter);
+        autoCoralL3Score = (TextView) findViewById(R.id.autoCoralL3Score);
+        autoCoralL3Score.setOnClickListener(this);
+
 
 
 
@@ -193,11 +198,11 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
         else if(clickedId == R.id.Amp_Missed_Decrement){
             counterDecrementLogic(ampMiss);
         }
-        else if(clickedId == R.id.Speaker_Scored_increment){
-            counterIncrementLogic(speakerScore);
+        else if(clickedId == R.id.autoCoralL3ScoreIncrement){
+            counterIncrementLogic(autoCoralL3Score);
         }
         else if(clickedId == R.id.Speaker_Scored_decrement){
-            counterDecrementLogic(speakerScore);
+            //counterDecrementLogic(speakerScore);
         }
         else if(clickedId == R.id.Speaker_Missed_Increment){
             counterIncrementLogic(speakerMiss);
@@ -416,7 +421,7 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
                 checkBox11.isChecked(),
                 0, //Integer.parseInt(ampScore.getText().toString()),
                 Integer.parseInt(ampMiss.getText().toString()),
-                Integer.parseInt(speakerScore.getText().toString()),
+                0, //Integer.parseInt(speakerScore.getText().toString()),
                 Integer.parseInt(speakerMiss.getText().toString()),
                 leaveBool,
                 //2025 captureAutoData
@@ -424,15 +429,15 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
                 Integer.parseInt(autoCoralL4Score.getText().toString()),
                 Integer.parseInt(autoCoralL4Miss.getText().toString()),
                 Integer.parseInt(autoCoralL3Score.getText().toString()),
-                Integer.parseInt(autoCoralL3Miss.getText().toString()),
-                Integer.parseInt(autoCoralL2Score.getText().toString()),
-                Integer.parseInt(autoCoralL2Miss.getText().toString()),
-                Integer.parseInt(autoCoralL1Score.getText().toString()),
-                Integer.parseInt(autoCoralL1Miss.getText().toString()),
-                Integer.parseInt(autoProcessorScore.getText().toString()),
-                Integer.parseInt(autoProcessorMiss.getText().toString()),
-                Integer.parseInt(autoNetScore.getText().toString()),
-                Integer.parseInt(autoNetMiss.getText().toString())
+               0,//Integer.parseInt(autoCoralL3Miss.getText().toString()),
+                0,//Integer.parseInt(autoCoralL2Score.getText().toString()),
+                0,//Integer.parseInt(autoCoralL2Miss.getText().toString()),
+                0,//Integer.parseInt(autoCoralL1Score.getText().toString()),
+                0,//Integer.parseInt(autoCoralL1Miss.getText().toString()),
+                0,//Integer.parseInt(autoProcessorScore.getText().toString()),
+                0,//Integer.parseInt(autoProcessorMiss.getText().toString()),
+                0,//Integer.parseInt(autoNetScore.getText().toString()),
+                0//Integer.parseInt(autoNetMiss.getText().toString())
 
 
         );

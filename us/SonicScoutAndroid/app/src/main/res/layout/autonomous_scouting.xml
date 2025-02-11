@@ -340,7 +340,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/SpeakerScoredLabel"
+                android:id="@+id/SpeakerScoredCounter"
                 android:layout_width="@dimen/_115sdp"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
@@ -358,7 +358,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/SpeakerScoredCounter"
+                android:id="@+id/autoCoralL3Score"
                 android:layout_width="@dimen/_29sdp"
                 android:layout_height="@dimen/_29sdp"
                 android:layout_alignParentEnd="true"
@@ -375,7 +375,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/Speaker_Scored_increment"
+                android:id="@+id/autoCoralL3ScoreIncrement"
                 android:layout_width="@dimen/_29sdp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_10sdp"
