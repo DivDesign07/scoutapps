@@ -29,7 +29,7 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
     
     Button autoCoralL4ScoreIncrement, autoCoralL4ScoreDecrement, ampMissInrecement, ampMissDecrement;
 
-    Button autoCoralL3ScoreIncrement;
+    Button autoCoralL3ScoreIncrement, autoCoralL3ScoreDecrement;
 
     
 
@@ -86,8 +86,8 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
         //speaker & amp scoring, Initializing all the variables listed above by connecting them to an
         //an xml object in the relative xml file
 
-        speakerScoreDecrement = (Button) findViewById(R.id.Speaker_Scored_decrement);
-        speakerScoreDecrement.setOnClickListener(this);
+        autoCoralL3ScoreDecrement = (Button) findViewById(R.id.autoCoralL3ScoreDecrement);
+        autoCoralL3ScoreDecrement.setOnClickListener(this);
         speakerMissIncrement = (Button) findViewById(R.id.Speaker_Missed_Increment);
         speakerMissIncrement.setOnClickListener(this);
         speakerMissDecrement = (Button) findViewById(R.id.Speaker_Missed_Decrement);
@@ -201,8 +201,8 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
         else if(clickedId == R.id.autoCoralL3ScoreIncrement){
             counterIncrementLogic(autoCoralL3Score);
         }
-        else if(clickedId == R.id.Speaker_Scored_decrement){
-            //counterDecrementLogic(speakerScore);
+        else if(clickedId == R.id.autoCoralL3ScoreDecrement){
+            counterDecrementLogic(autoCoralL3Score);
         }
         else if(clickedId == R.id.Speaker_Missed_Increment){
             counterIncrementLogic(speakerMiss);
@@ -429,7 +429,7 @@ public class AutonomousActivity extends ComponentActivity implements View.OnClic
                 Integer.parseInt(autoCoralL4Score.getText().toString()),
                 Integer.parseInt(autoCoralL4Miss.getText().toString()),
                 Integer.parseInt(autoCoralL3Score.getText().toString()),
-               0,//Integer.parseInt(autoCoralL3Miss.getText().toString()),
+                0,//Integer.parseInt(autoCoralL3Miss.getText().toString()),
                 0,//Integer.parseInt(autoCoralL2Score.getText().toString()),
                 0,//Integer.parseInt(autoCoralL2Miss.getText().toString()),
                 0,//Integer.parseInt(autoCoralL1Score.getText().toString()),

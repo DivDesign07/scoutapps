@@ -391,7 +391,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/Speaker_Scored_decrement"
+                android:id="@+id/autoCoralL3ScoreDecrement"
                 android:layout_width="@dimen/_29sdp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
