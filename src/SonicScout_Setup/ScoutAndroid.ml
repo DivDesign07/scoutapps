@@ -65,10 +65,7 @@ let clean areas =
   if List.mem `AndroidGradleCxx areas then begin
     start_step "Cleaning SonicScoutAndroid Android Gradle C++ artifacts";
     DkFs_C99.Path.rm ~recurse:() ~force:() ~kill:()
-      Fpath.
-        [
-          projectdir / "data" / ".cxx";
-        ]
+      Fpath.[ projectdir / "data" / ".cxx" ]
     |> rmsg
   end;
   if List.mem `AndroidBuilds areas then begin
@@ -102,7 +99,8 @@ let clean areas =
     |> Utils.rmsg
   end;
   if Sys.win32 && List.mem `DkSdkWsl2 areas then begin
-    start_step "Cleaning SonicScoutAndroid build artifacts referencing DkSDK WSL2";
+    start_step
+      "Cleaning SonicScoutAndroid build artifacts referencing DkSDK WSL2";
     (* Avoids:
         [CXX1409]
         C:\scoutapps\us\SonicScoutAndroid\data\.cxx\Debug\5b4k3l6q\arm64-v8a\android_gradle_build.json
@@ -111,15 +109,12 @@ let clean areas =
         '\\wsl.localhost\DkSDK-1.0-Debian-12-NDK-23.1.7779620\home\dksdkbob\source\34880665\build\_deps\c-capnproto-src\CMakeLists.txt'
         to exist *)
     DkFs_C99.Path.rm ~recurse:() ~force:() ~kill:()
-      Fpath.
-        [
-          projectdir / "data" / ".cxx";
-        ]
-    |> rmsg;
+      Fpath.[ projectdir / "data" / ".cxx" ]
+    |> rmsg
   end;
   RunGradle.clean areas
 
-let run ?opts ~slots () =
+let run ?(opts : Utils.opts option) ~slots () =
   let open Bos in
   Utils.start_step "Building SonicScoutAndroid";
   let cwd = OS.Dir.current () |> Utils.rmsg in
@@ -156,7 +151,10 @@ let run ?opts ~slots () =
       if Sys.win32 then
         Logs.info (fun l ->
             l "NOTE: Extracting Gradle can take several minutes");
-      dk [ "dksdk.gradle.download"; "ALL"; "NO_SYSTEM_PATH" ];
+      let d_ARGS =
+        match opts with Some { build_type = `Debug; _ } -> [ "ALL" ] | _ -> []
+      in
+      dk ([ "dksdk.gradle.download"; "NO_SYSTEM_PATH" ] @ d_ARGS);
 
       (* Packages: NDK (Side by side) + Android SDK Platform *)
       dk [ "dksdk.android.ndk.download"; "NO_SYSTEM_PATH" ];
