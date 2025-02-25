@@ -242,7 +242,7 @@ public class ScoutingSessionViewModel extends ViewModel {
         rawMatchData.setAutoCoralL2Score(autoCoralL2Score);
         rawMatchData.setAutoCoralL1Score(autoCoralL1Score);
         rawMatchData.setAutoProcessorScore(autoProcessorScore);
-        rawMatchData.setAutoProcessorScore(autoProcessorMiss);
+        rawMatchData.setAutoProcessorMiss(autoProcessorMiss);
         rawMatchData.setAutoNetScore(autoNetScore);
         rawMatchData.setAutoNetMiss(autoNetMiss);
         rawMatchData.setAutoCoralL4Miss(autoCoralL4Miss);
