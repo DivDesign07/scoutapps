@@ -5,6 +5,7 @@
 /dune-workspace
 /.z-dk-dune-project
 /.merlin
+*.csv
 
 # Opam and conventional OCaml development
 /_opam/
