@@ -60,7 +60,7 @@
       // The next set of dependencies (dksdk-*) are available to DkSDK subscribers
       //    dksdk-cmake is the source of DKSDK_VERSION_MAJMIN.
       //    dksdk-cmake_GITREF defaults to 'main' but can be overridden with `./dk dksdk.project.get DKSDK_CMAKE_GITREF <ref>`
-      "dksdk-cmake": { "inherits": "_mirror", "urls": [ "${dksdk-cmake_REPOSITORY}#${dksdk-cmake_GITREF}" ] },
+      "dksdk-cmake": { "inherits": "_mirror", "urls": [ "${dksdk-cmake_REPOSITORY}#2025-03-13-firstrobotics-sundome" ] },
       "dksdk-ffi-c": { "inherits": "_mirror", "urls": [ "${dksdk-ffi-c_REPOSITORY}#${DKSDK_VERSION_MAJMIN}" ] },
       // The remaining dependencies are third-party open source projects
       "dkml-runtime-common": { "inherits": "_local", "urls": [ "https://github.com/diskuv/dkml-runtime-common.git" ] }
